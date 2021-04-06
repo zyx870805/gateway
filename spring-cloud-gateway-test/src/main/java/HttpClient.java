@@ -31,7 +31,7 @@ public class HttpClient {
                         }
                     });
             while (true) {
-                TimeUnit.MILLISECONDS.sleep(1000);
+                TimeUnit.MILLISECONDS.sleep(500);
                 bootstrap.connect().sync();
             }
         } catch (Exception e) {

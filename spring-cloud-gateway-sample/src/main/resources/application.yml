@@ -7,9 +7,14 @@ spring:
         - predicates:
             - Path=/java/**
           filters:
+            - name: GpDefine
+              args:
+                - name: Gp_Mic
             - StripPrefix=1
             - name: RequestRateLimiter
               args:
+                denyEmptyKey: true
+                emptyKeyStatus: SERVICE_UNAVAILABLE
                 key-resolver: '#{@hostAddrKeyResolver}'
                 redis-rate-limiter.replenishRate: 1
                 redis-rate-limiter.burstCapacity: 3
@@ -17,6 +22,15 @@ spring:
   application:
     name: spring-cloud-gateway-sample
   redis:
-    host: 192.168.6.128
+    host: 192.168.6.109
     port: 6379
-    database: 0
+#    database: 0
+
+management:
+  endpoint:
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
