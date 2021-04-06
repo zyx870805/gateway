@@ -1,0 +1,7 @@
+# Project exclude paths
+/spring-cloud-gateway-sample/target/
+/spring-cloud-gateway-service/target/
+/spring-cloud-gateway-test/target/
+.idea
+target/
+*.iml

@@ -1,0 +1,22 @@
+server:
+  port: 8084
+spring:
+  cloud:
+    gateway:
+      routes:
+        - predicates:
+            - Path=/java/**
+          filters:
+            - StripPrefix=1
+            - name: RequestRateLimiter
+              args:
+                key-resolver: '#{@hostAddrKeyResolver}'
+                redis-rate-limiter.replenishRate: 1
+                redis-rate-limiter.burstCapacity: 3
+          uri: "http://localhost:8083/hello"
+  application:
+    name: spring-cloud-gateway-sample
+  redis:
+    host: 192.168.6.128
+    port: 6379
+    database: 0
