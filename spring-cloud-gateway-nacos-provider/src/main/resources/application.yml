@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: spring-cloud-nacos-gateway-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.6.111:8848,192.168.6.112:8848,192.168.6.113:8848
+server:
+  port: 8080

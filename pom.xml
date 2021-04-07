@@ -12,6 +12,8 @@
         <module>spring-cloud-gateway-service</module>
         <module>spring-cloud-gateway-sample</module>
         <module>spring-cloud-gateway-test</module>
+        <module>spring-cloud-gateway-nacos-provider</module>
+        <module>spring-cloud-gateway-nacos-consumer</module>
     </modules>
 
     <properties>
